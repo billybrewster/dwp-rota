@@ -1,0 +1,28 @@
+<!-- layout.nunjucks -->
+
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <ng-view></ng-view>
+  
+  <!-- Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-resource.min.js"></script>
+
+
+  <!-- You write code for this content block in another file -->
+  {% block content %} 
+
+
+   {% endblock %}
+
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+//Forms are an exception to functional styling (to ensure standard formatting)
+.form-control{
+    @extend .small;
+    border: 2px solid brand(gds-grey-1);
+    padding: 4px;
+    width: 25em;
+}
+
+//When a form element is focused
+input:focus,
+textarea:focus,
+select:focus,
+button:focus{
+    outline: 3px solid brand(gds-yellow);
+}
+
+.block-label{
+    display: block;
+    margin-bottom: 5px;
+    float: left;
+    clear: left;
+    position: relative;
+    background: brand(gds-grey-3);  ;
+    border: 1px solid brand(gds-grey-3);  ;
+    padding: 18px 30px 15px 54px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.block-label input{
+    margin: 0;
+    position: absolute;
+    top: 23px;
+    left: 15px;
+    cursor: pointer;
+}
+
+.js-enabled label.selected{
+    background: brand(gds-white);
+    border-color: brand(gds-black);
+}
+
+.js-enabled label.focused{
+    outline: 3px solid brand(gds-yellow);
+}
+
+.block-label:hover{
+    border-color: brand(gds-black);
+}

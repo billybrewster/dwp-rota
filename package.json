@@ -1,0 +1,53 @@
+{
+  "name": "nunjucks_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=dev node ./bin/server.js",
+    "debug-local": "NODE_ENV=local node-debug ./bin/server.js",
+    "debug-dev": "NODE_ENV=dev node-debug ./bin/server.js",
+    "dev": "NODE_ENV=dev node ./bin/server.js",
+    "dev2": "NODE_ENV=dev2 node ./bin/server.js",
+    "prod": "NODE_ENV=prod node ./bin/server.js",
+    "staging": "NODE_ENV=staging node ./bin/server.js",
+    "qa": "NODE_ENV=qa node ./bin/server.js",
+    "local": "NODE_ENV=local node ./bin/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.0.0-rc.5",
+    "autoprefixer": "^6.5.2",
+    "body-parser": "latest",
+    "browser-sync": "^2.17.5",
+    "del": "^2.2.2",
+    "express": "^4.14.0",
+    "express-nunjucks": "^1.0.0",
+    "express-sanitize-escape": "^0.6.1",
+    "express-session": "^1.13.0",
+    "extend": "^3.0.0",
+    "fs-extra": "^0.30.0",
+    "gulp": "^3.9.1",
+    "gulp-contrib-copy": "^0.1.2",
+    "gulp-debug": "^2.1.2",
+    "gulp-postcss": "^6.2.0",
+    "gulp-sass": "^2.3.2",
+    "helmet": "^2.1.0",
+    "lodash": "^4.16.6",
+    "mongoose": "^4.6.6",
+    "nunjucks": "^2.5.2",
+    "path": "^0.12.7",
+    "request": "^2.78.0",
+    "require-dir": "^0.3.1",
+    "routes": "^2.1.0",
+    "run-sequence": "^1.2.2",
+    "serve-favicon": "^2.3.0",
+    "src": "^1.1.2",
+    "winston": "^2.1.1"
+  },
+  "devDependencies": {
+    "gulp-data": "^1.2.1",
+    "gulp-nunjucks-render": "^2.0.0"
+  }
+}

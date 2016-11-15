@@ -1,0 +1,17 @@
+// GDS Typography styling following:
+// http://govuk-elements.herokuapp.com/typography/#typography-font
+
+
+// Line heights are directly tied to font size, so defined alongside.
+// Line heights calculated by (line-height -in-PX / Font-size)
+// Font is set at root level in fonts.scss to 16px;
+// All other rules overwrite that size in proportion.
+
+.xlarge                              { font-size: 3em; line-height:1.2;  }  //48px
+.logo                                   { font-size: 1.875em; } // 30px
+.large                                 { font-size: 2.25em; }  //36px
+.heading-secondary      { font-size: 1.6875em; } //27px
+.medium                          { font-size: 1.5em; } //24px
+.small                                { font-size: 1.1875em; } //19px
+.regular                            { font-size: 1em; }
+.x-small                            { font-size:  0.875em; } //14px

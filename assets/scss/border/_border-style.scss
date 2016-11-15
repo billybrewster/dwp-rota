@@ -1,0 +1,12 @@
+.border-solid-all            { border-style: solid; }
+.border-solid-top          { border-top-style: solid; }
+.border-solid-left           { border-left-style: solid; }
+.border-solid-bottom   { border-bottom-style: solid; }
+.border-solid-right         { border-right-style: solid; }
+
+.border-none                  { border : none; }
+
+.focus-border-none:focus{
+    border : none;
+    outline: none;
+}

@@ -1,0 +1,86 @@
+// //Form buttons are an exception to functional styling (to ensure standard formatting)
+
+@mixin button-stub{
+    display: inline-block;
+    position: relative;
+    color: brand(gds-white);
+    border-radius: 0;
+    border:none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    -moz-appearance: none;
+    box-shadow: 0 2px 0 semanticName(button-shadow);
+    cursor: pointer;
+    vertical-align: top;
+    line-height: 1.2;
+}
+
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"]{
+    @include button-stub;
+    padding: 0.625em 0.9375em 0.3125em 0.9375em;
+    background-color:  semanticName(button-colour);
+    text-decoration: none;
+    top: 2px;
+}
+
+button.start,
+input.start{
+    @include button-stub;
+    font-weight: 700;
+    background-position: 100% 50%;
+    padding: 0.3em 2em 0.3em 1em;
+    font-size: 1.5em;
+    background-color:  semanticName(button-colour);
+    background-image: url("#{$img_path}/icon-pointer-2x.png") ;
+    background-repeat: no-repeat;
+    background-size: 30px 19px;
+  }
+
+input[type="button"]:link,
+input[type="button"]:hover,
+input[type="button"]:visited,
+input[type="submit"]:link,
+input[type="submit"]:hover,
+input[type="submit"]:visited,
+button:link,
+button:hover,
+button:visited{
+    color: brand(gds-white);
+}
+
+button:active:before,
+input[type="button"]:active:before,
+input[type="submit"]:active:before{
+    top: -10%;
+    height: 120%;
+}
+
+button:focus,
+input[type="button"]:focus,
+input[type="button"]:focus{
+    outline:3px solid brand(gds-yellow);
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover{
+    cursor: pointer;
+    background-color:  brand(gds-green);
+}
+
+button:disabled,
+input[type="button"]:disabled,
+input[type="reset"]:disabled,
+input[type="submit"]:disabled{
+    cursor: default;
+    background-color: semanticName(button-colour);
+    opacity: 0.5;
+}
+
+
+
+

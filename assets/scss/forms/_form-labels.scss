@@ -1,0 +1,15 @@
+//Forms are an exception to functional styling (to ensure standard formatting)
+
+.form-label{
+    @extend .small;
+    display: block;
+    color: brand(gds-black);
+    font-weight: 700;
+}
+
+.form-label-no-bold{
+    @extend .small;
+    display: block;
+    color: brand(gds-black);
+    font-weight:  400;
+}

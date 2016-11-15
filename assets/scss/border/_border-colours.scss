@@ -1,0 +1,16 @@
+/*Border colours are bespoke, until the need for something greater.
+
+need to redo this, better. width, should be specified alongside colour as they are intrinictly linked.
+border type, e.g. solid, dotted etc should be separate.
+
+-------------------------------------------------- */
+.border-colour-top-footer                 { border-top-color: semanticName(footer-border-colour);  }
+.border-colour-top-govuk-blue       { border-top-color: brand(govuk-blue); }
+.border-colour-all-grey-1                   { border-color: brand(gds-grey-1); }
+.border-colour-all-grey-2                   { border-color: brand(gds-grey-2); }
+.border-colour-top-grey-2                 { border-top-color: brand(gds-grey-2); }
+.border-colour-bottom-grey-2         { border-bottom-color: brand(gds-grey-2); }
+.border-colour-left-grey-2                 { border-left-color: brand(gds-grey-2); }
+.border-colour-right-grey-2              { border-right-color: brand(gds-grey-2); }
+.border-colour-bottom-white          { border-bottom-color: brand(gds-white); }
+.border-colour-all-gds-red               { border-color: brand(gds-red); }

@@ -1,0 +1,8 @@
+/* Generate a class for each icon in the format:
+.COLOR-NAME-icon {}
+-------------------------------------------------- */
+@each $color, $value in $brands {
+    .bg-#{$color} {
+        background-color: #{$value};
+    }
+}

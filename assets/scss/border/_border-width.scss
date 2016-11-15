@@ -1,0 +1,22 @@
+/*border widths*/
+.border-collapse           { border-collapse: collapse; }
+
+.border-all-none            { border-width: 0 }
+.border-left-none          { border-left-width: 0;  }
+.border-right-none        { border-right-width: 0;  }
+.border-top-none          { border-top-width: 0;  }
+.border-bottom-none   { border-bottom-width: 0;  }
+
+.border-all-1            { border-width: 1px;  }
+.border-left-1          { border-left-width: 1px;  }
+.border-right-1        { border-right-width: 1px;  }
+.border-top-1          { border-top-width: 1px;  }
+.border-bottom-1   { border-bottom-width: 1px;  }
+
+.border-all-2            { border-width: 2px;  }
+
+.border-left-5       { border-left-width: 5px; } // for form left border
+.border-all-5            { border-width: 5px; }
+
+.border-top-10       { border-top-width: 10px; } // for blue project bar colour
+

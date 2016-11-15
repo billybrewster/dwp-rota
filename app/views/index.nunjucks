@@ -1,0 +1,220 @@
+<!-- index.nunjucks -->
+{% extends "layout.nunjucks" %}
+
+{% block content %}
+
+
+<h1>This is the index page</h1>
+<!-- Adds the navigation partial -->
+
+<!-- {% import '../templates/macros/nav-macro.nunjucks' as nav %} -->
+<!-- Creating the navigation with activePage = 'home' -->
+{{nav.active('home')}}
+
+
+
+
+
+
+
+
+
+
+<!-- Template -->
+    <script type="text/ng-template" id="/contacts.html">
+      <!-- Search: <input type="text" ng-model="search.name"> -->
+
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Out Of Hours Support</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right">
+            <div class="form-group">
+              <input type="text" placeholder="Email" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Sign in</button>
+          </form>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+
+
+<!--
+      <div class="jumbotron">
+      <div class="container">
+        <h1>Out of hours support details</h1>
+      </div>
+    </div>
+-->
+
+
+
+
+         <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Contact No</th>
+                  <th>Support Hours</th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+
+
+      <ul>
+        <tr ng-repeat="contact in contacts | filter: search">
+          <td><a ng-show="!editing[$index]" href="#/{{contact._id}}">{{contact.name}}</a></td>
+          <td><ng-show="!editing[$index]" >{{contact.number}}</td>
+          <td><ng-show="!editing[$index]">{{contact.hours}}</td>
+
+
+          <td><input ng-show="editing[$index]" type="text" class="form-control" ng-model="contact.name"></td>
+          <td><input ng-show="editing[$index]" type="text" class="form-control" ng-model="contact.number"></td>
+          <td><input ng-show="editing[$index]" type="text" class="form-control" ng-model="contact.hours"></td>
+
+          <td><button type="button" class="btn btn-primary" ng-show="editing[$index]" ng-click="update($index)">Update</button></td>
+          <td><button type="button" class="btn btn-primary" ng-show="editing[$index]" ng-click="cancel($index)">Cancel</button></td>
+
+          <td><button type="button" class="btn btn-primary" ng-show="!editing[$index]" ng-click="edit($index)">edit</button></td>
+          <td><button type="button" class="btn btn-primary" ng-show="!editing[$index]" ng-click="remove($index)">remove</button></td>
+        </tr>
+        <tr>
+        <td><input type="text" class="form-control" ng-model="newContactName"></td>
+        <td><input type="text" class="form-control" ng-model="newContactNumber"></td>
+        <td><input type="text" class="form-control" ng-model="newContactHours"></td>
+        <!-- <td>&nbsp;</td> -->
+        <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+        <td><button  type="button" class="btn btn-primary" ng-click="save()">Create</button></td>
+        </tr>
+      </tbody>
+      </table>
+      </div>
+      <!-- New entry <input type="text" ng-model="newContact"><button ng-click="save()">Create</button> -->
+    </script>
+
+    <script type="text/ng-template" id="/contactDetails.html">
+      <h1>{{ contact.name }}</h1>
+      completed: <input type="checkbox" ng-model="contact.completed"><br>
+      note: <textarea ng-model="contact.note"></textarea><br><br>
+
+      <button ng-click="update()">Update</button>
+      <button ng-click="remove()">Remove</button>
+      <a href="/">Cancel</a>
+    </script>
+
+
+    <script>
+      angular.module('app', ['ngRoute', 'ngResource'])
+
+        //---------------
+        // Services
+        //---------------
+
+        .factory('Contacts', ['$resource', function($resource){
+          return $resource('/contacts/:id', null, {
+            'update': { method:'PUT' }
+          });
+        }])
+
+        //---------------
+        // Controllers
+        //---------------
+
+        .controller('TodoController', ['$scope', 'Contacts', function ($scope, Contacts) {
+          $scope.editing = [];
+          $scope.contacts = Contacts.query();
+
+          $scope.save = function(){
+            if(!$scope.newContactName || $scope.newContactName.length < 1) return;
+            <!-- var contact = new Contacts({ name: $scope.newContact, completed: false }); -->
+            var contact = new Contacts({ name: $scope.newContactName, number : $scope.newContactNumber, hours :  $scope.newContactHours});
+
+            contact.$save(function(){
+              $scope.contacts.push(contact);
+              $scope.newContactName = ''; // clear textbox
+              $scope.newContactNumber = '';
+              $scope.newContactHours = '';
+            });
+          }
+
+          $scope.update = function(index){
+            var contact = $scope.contacts[index];
+            Contacts.update({id: contact._id}, contact);
+            $scope.editing[index] = false;
+          }
+
+          $scope.edit = function(index){
+            $scope.editing[index] = angular.copy($scope.contacts[index]);
+          }
+
+          $scope.cancel = function(index){
+            $scope.contacts[index] = angular.copy($scope.editing[index]);
+            $scope.editing[index] = false;
+          }
+
+          $scope.remove = function(index){
+            var contact = $scope.contacts[index];
+            Contacts.remove({id: contact._id}, function(){
+              $scope.contacts.splice(index, 1);
+            });
+          }
+        }])
+
+        .controller('ContactDetailCtrl', ['$scope', '$routeParams', 'Contacts', '$location', function ($scope, $routeParams, Contacts, $location) {
+          $scope.contact = Contacts.get({id: $routeParams.id });
+
+          $scope.remove = function(){
+            Contacts.remove({id: $scope.contact._id}, function(){
+              $location.url('/');
+            });
+          }
+        }])
+
+        //---------------
+        // Routes
+        //---------------
+
+        .config(['$routeProvider', function ($routeProvider) {
+          $routeProvider
+            .when('/', {
+              templateUrl: '/contacts.html',
+              controller: 'TodoController'
+            })
+
+            .when('/:id', {
+              templateUrl: '/contactDetails.html',
+              controller: 'ContactDetailCtrl'
+           });
+        }]);
+    </script>
+
+
+
+
+
+
+<div class="gallery">
+  <!-- Loops through "images" array -->
+  {% for image in images %}
+  <div class="gallery__item">
+    <img src="{{image.src}}" alt="{{image.alt}}">
+  </div>
+  {% endfor %}
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,25 @@
+.top-0    { top:   0; }
+.left-0   { left:  0; }
+.right-0  { right: 0; }
+.bottom-0 { bottom: 0; }
+
+@include breakpoint(mobile) {
+    .top-0-mob    { top:   0; }
+    .left-0-mob   { left:  0; }
+    .right-0-mob  { right: 0; }
+    .bottom-0-mob { bottom: 0; }
+}
+
+@include breakpoint(tablet) {
+    .top-0-tab    { top:   0; }
+    .left-0-tab   { left:  0; }
+    .right-0-tab  { right: 0; }
+    .bottom-0-tab { bottom: 0; }
+}
+
+@include breakpoint(desktop) {
+    .top-0-desktop    { top:   0; }
+    .left-0-desktop   { left:  0; }
+    .right-0-desktop  { right: 0; }
+    .bottom-0-desktop { bottom: 0; }
+}

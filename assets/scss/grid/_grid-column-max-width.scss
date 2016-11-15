@@ -1,0 +1,31 @@
+.column-maxw-100  { max-width: 100%; }
+.column-maxw-75   { max-width: 75%; }
+.column-maxw-50   { max-width: 50%; }
+.column-maxw-25   { max-width: 25%; }
+
+.column-maxw-960   { max-width: 960px; }
+
+
+@include breakpoint(mobile) {
+    .column-maxw-100-mob  { max-width: 100%; }
+    .column-maxw-75-mob   { max-width: 75%; }
+    .column-maxw-50-mob   { max-width: 50%; }
+    .column-maxw-25-mob   { max-width: 25%; }
+    .column-maxw-none-mob { max-width: none; }
+}
+
+@include breakpoint(tablet) {
+    .column-maxw-100-tab  { max-width: 100%; }
+    .column-maxw-75-tab   { max-width: 75%; }
+    .column-maxw-50-tab   { max-width: 50%; }
+    .column-maxw-25-tab   { max-width: 25%; }
+    .column-maxw-none-tab { max-width: none; }
+}
+
+@include breakpoint(desktop) {
+    .column-maxw-100-desktop  { max-width: 100%; }
+    .column-maxw-75-desktop   { max-width: 75%; }
+    .column-maxw-50-desktop   { max-width: 50%; }
+    .column-maxw-25-desktop   { max-width: 25%; }
+    .column-maxw-none-desktop { max-width: none; }
+}

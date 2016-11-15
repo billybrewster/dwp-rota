@@ -1,0 +1,42 @@
+/*Default link colur behaviour*/
+
+a:link      { color: brand(govuk-blue); }
+a:visited { color: brand(govuk-blue); }
+a:hover   { color: semanticName(link-hover-colour); }
+// a:active  { color: brand(link-active-colour);  }
+
+a.gds-white:link,
+a.gds-white:visited,
+a.gds-white:hover ,
+a.gds-white:active  { color: brand(gds-white);  }
+
+a.gds-black:link,
+a.gds-black:visited,
+a.gds-black:hover ,
+a.gds-black:active  { color: brand(gds-black);  }
+
+a.gds-grey:link,
+a.gds-grey:visited { color: semanticName(footer-colour);  }
+a.gds-grey:hover   { color: brand(gds-black);  }
+a.gds-grey:active  { color: semanticName(footer-colour);  }
+
+a.govuk-blue:link,
+a.govuk-blue:visited,
+a.govuk-blue:hover ,
+a.govuk-blue:active  { color: brand(govuk-blue);  }
+
+a.gds-red:link,
+a.gds-red:visited,
+a.gds-red:hover ,
+a.gds-red:active  { color: brand(gds-red);  }
+
+
+a:focus  {
+    background-color: brand(gds-yellow);
+    outline: 3px solid brand(gds-yellow);
+}
+
+a.current{
+    text-decoration: none;
+}
+

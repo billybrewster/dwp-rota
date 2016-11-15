@@ -1,0 +1,14 @@
+ <footer class="grid-row bg-gds-grey-3 footer-colour pad-vertical-60 border-top-1 border-colour-top-footer  border-solid-top" id="footer">
+        <div class="container grid-row">
+            <div class="float-left open-government-licence column-three-quarters pad-top-99">
+              <p class="pad-left-45 margin-left-5 margin-bottom-10 x-small">Built by UC Technology</p>
+              {% block licence_message %}
+                <p class="ogl-logo x-small">All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license" class="gds-grey" title="Read about the Open Government Licence">Open Government Licence v3.0</a>, except where otherwise stated</p>
+              {% endblock %}
+            </div>
+          <div class="float-left  copyright column-quarter x-small">
+            <a href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/" class="column-100 gds-grey"><$ crown_copyright_message|default('&copy; Crown copyright')|safe $></a>
+          </div>
+    </div>
+
+</footer>

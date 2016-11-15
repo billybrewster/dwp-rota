@@ -1,0 +1,11 @@
+//DONT Show if JS is not available available.
+.js-visible{
+    display: none;
+}
+
+/* shown with JS, always on for non-JS */
+.js-enabled {
+    #global-cookie-message{ display: none;  }
+    .active { @extend .bold; }
+    .js-visible{ display: inline-block; } //If JS is available, show CSS.
+}

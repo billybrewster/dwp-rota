@@ -1,0 +1,72 @@
+.tab-link {
+    display: block;
+    float: left;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    padding: 15px;
+    margin-right: 1px;
+    margin-bottom: -1px;
+}
+
+.tab-link:hover {
+    text-decoration: underline;
+}
+
+.tab {
+    display: none;
+    clear: both;
+    border-top:1px solid brand(gds-grey-2);
+    padding-top:15px;
+  }
+
+.target-fix {
+    display: block;
+    top: 0;
+    left: 0;
+    position: fixed;
+  }
+
+// If no tab is selected show the first by default.
+.target-fix:nth-of-type(1):not(:target) ~ span:nth-of-type(2):not(:target) ~ .tab:nth-of-type(1){
+    display: block;
+}
+
+/*
+The following two classes work as following
+ 1) look for the .target-fix class that is selected
+ 2) Set display block on the corresponding .tab class.
+*/
+
+//Show the first tab when clicked.
+.target-fix:nth-of-type(2):target ~ .tab:nth-of-type(1){
+    display: block;
+}
+
+//Show the second tab when clicked.
+.target-fix:nth-of-type(1):target ~ .tab:nth-of-type(2){
+    display: block;
+}
+
+/*Active Tab State */
+#tabB:target ~ a:nth-of-type(2),
+#tabB:not(:target) ~ a:nth-of-type(1){
+    background-color: brand(gds-white);
+    color: brand(gds-black);
+    font-weight: 700;
+    border-top:1px solid brand(gds-grey-2);
+    border-left:1px solid brand(gds-grey-2);
+    border-bottom:1px solid brand(gds-white);
+    border-right:1px solid brand(gds-grey-2);
+}
+
+/* None Active Tab*/
+#tabB:target ~ a:nth-of-type(2):after,
+#tabB:not(:target) ~ a:nth-of-type(1):after{
+    display: block;
+    position: absolute;
+    content: "";
+    height: 1px;
+    background-color: brand(gds-white);
+    color: brand(govuk-blue);
+}

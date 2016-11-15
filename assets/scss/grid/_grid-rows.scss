@@ -1,0 +1,4 @@
+//semantic naming, but othereise is a clearfix.
+.grid-row               {  @include clearfix; }
+.grid-row::before {  @include clearfix-before; }
+.grid-row::after    {  @include clearfix-after; }

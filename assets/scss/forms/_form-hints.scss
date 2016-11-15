@@ -1,0 +1,11 @@
+.form-hint{
+    @extend .small;
+    display: block;
+    color: brand(gds-grey-1);
+}
+
+.form-hint-small{
+    @extend .x-small;
+    display: inline-block;
+    color: brand(gds-grey-1);
+}

@@ -1,0 +1,44 @@
+{#
+We only want the Add Risk button to be visible if we are not already on the "add risk page".
+If the database is down, we don't want the user to try and submit a request, so we test if any risks are being returned. If not, also hide the button
+#}
+{% set addRiskVisible="false" %}
+{% if risks %} {% set addRiskVisible="true" %} {% endif %}
+{% if risk %} {% set addRiskVisible="true" %} {% endif %}
+{% if ownedRisks %} {% set addRiskVisible="true" %} {% endif %}
+
+<header id="global-header" class="bg-gds-black">
+    <div class="container">
+        <div class="grid-row column-100 display-ib line-height-1">
+
+            <div class="pad-vertical-10 display-ib column-two-thirds">
+                <h3 class="display-ib">
+                    <a href="/" class="gds-white medium inverted-link bold">{{serviceProvider }}</a>
+                </h3>
+                <h2 class="display-ib gds-white medium bold float-right margin-right-120">{{ serviceName }}</h2>
+            </div>
+
+            <!-- {% if role %} -->
+            <div class="pad-vertical-10 display-ib column-one-third text-right">
+                <span class="gds-white x-small display-ib margin-right-15">Welcome {{firstName}}</span>
+                <a href="/logout" class="x-small gds-white regular">Logout</a>
+            </div>
+            <!-- {% endif %} -->
+
+        </div>
+    </div>
+</header>
+
+<!-- {% if role %} -->
+<div class="gds-black bg-gds-grey-3 display-ib column-100">
+    <div class="container">
+        <div class="column-100 display-ib pad-bottom-5 pad-top-10">
+            {% include "includes/navigation.html" %}
+            {% if addRiskVisible == "true" %}
+            <a href="/risks/{{teamId}}/add/" class="float-right">Add New Risk</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+<!-- {% endif %} -->
+

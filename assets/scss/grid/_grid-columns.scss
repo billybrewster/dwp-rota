@@ -1,0 +1,8 @@
+.column-one-third                 { width:33%; }
+.column-two-thirds               { width:66%; }
+.column-half                           { width:50%; }
+.column-quarter                    { width: 25%; }
+.column-three-quarters       { width: 75%; }
+
+.column-100                          { width:100%; }
+//Do we need grid-column, separate  to columns? encompassing floats and handling for mobile.

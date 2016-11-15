@@ -1,0 +1,21 @@
+.pos-stat { position: static; }
+.pos-rel  { position: relative; }
+.pos-abs  { position: absolute; }
+
+@include breakpoint(mobile) {
+    .pos-stat-mob { position: static; }
+    .pos-rel-mob  { position: relative; }
+    .pos-abs-mob  { position: absolute; }
+}
+
+@include breakpoint(tablet) {
+    .pos-stat-tab { position: static; }
+    .pos-rel-tab  { position: relative; }
+    .pos-abs-tab  { position: absolute; }
+}
+
+@include breakpoint(desktop) {
+    .pos-stat-desktop { position: static; }
+    .pos-rel-desktop  { position: relative; }
+    .pos-abs-desktop  { position: absolute; }
+}

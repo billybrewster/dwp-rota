@@ -1,0 +1,75 @@
+.display-i          { display: inline; }
+.display-b         { display: block; }
+.display-ib        { display: inline-block; }
+.display-it         { display: inline-table; }
+.display-tt         { display: table; width: 100%; }
+.display-t          { display: table; table-layout: fixed; width: 100%; }
+.display-tr         { display: table-row; }
+.display-tc        { display: table-cell; }
+.display-tcol     { display: table-column; }
+.display-tcolg  { display: table-column-group; }
+
+
+// Hide for sighted users but allow a screen reader to access content
+.display-offscreen{
+    position: absolute;
+    clip: rect(1px 1px 1px 1px); /* for Internet Explorer */
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0;
+    border: 0;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+// display a hidden element, on focus via Tabbing
+.display-offscreen:focus{
+    position:relative;
+    clip:auto;
+    width:auto;
+    height:auto;
+    overflow:auto;
+}
+
+@include breakpoint(mobile) {
+    .display-i-mob {     display: inline; }
+    .display-b-mob {     display: block; }
+    .display-ib-mob {    display: inline-block; }
+    .display-it-mob {    display: inline-table; }
+    .display-t-mob {     display: table; table-layout: fixed; width: 100%; }
+    .display-tr-mob {    display: table-row; }
+    .display-tc-mob {    display: table-cell; }
+    .display-tcol-mob {  display: table-column; }
+    .display-tcolg-mob { display: table-column-group; }
+}
+
+@include breakpoint(tablet) {
+    .display-i-tab {     display: inline; }
+    .display-b-tab {     display: block; }
+    .display-ib-tab {    display: inline-block; }
+    .display-it-tab {    display: inline-table; }
+    .display-t-tab {     display: table; table-layout: fixed; width: 100%; }
+    .display-tr-tab {      display: table-row; }
+    .display-tc-tab {    display: table-cell; }
+    .display-tcol-tab {  display: table-column; }
+    .display-tcolg-tab { display: table-column-group; }
+}
+
+@include breakpoint(desktop) {
+    .display-i-desktop {     display: inline; }
+    .display-b-desktop {     display: block; }
+    .display-ib-desktop {    display: inline-block; }
+    .display-it-desktop {    display: inline-table; }
+    .display-t-desktop {     display: table; table-desktopayout: fixed; width: 100%; }
+    .display-tr-desktop {    display: table-row; }
+    .display-tc-desktop {    display: table-cell; }
+    .display-tcol-desktop {  display: table-column; }
+    .display-tcolg-desktop { display: table-column-group; }
+}
+
+
+
+//Should always be the last display type. To ensure it overwrites and other display properties.
+[aria-hidden="true"]{
+    display: none;
+}

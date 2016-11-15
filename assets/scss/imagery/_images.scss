@@ -1,0 +1,75 @@
+//Bespoke Styles for Imagery
+
+.logo-image img{
+    display: inline;
+    position: relative;
+    top: -2px;
+    width: 35px;
+    height: 31px;
+    padding-right: 6px;
+    float: left;
+    line-height: inherit;
+    border: none;
+    visibility: hidden;
+}
+
+.logo-image{
+    float: left;
+    position: relative;
+    top: -1px;
+    height: 30px;
+    overflow: visible;
+    vertical-align: baseline;
+    padding-left: 6px;
+    padding-top: 2px;
+    border-bottom: 1px solid transparent;
+    background: transparent url("#{$img_path}/gov.uk_logotype_crown.png") no-repeat;
+    background-size: 35px 31px;
+    background-position: 0 0;
+    margin-bottom: -3px;
+    margin-top: 0px;
+
+}
+
+.copyright{
+    display: inline-block;
+    text-align: inherit;
+    width: 25%;
+    text-align: right;
+    padding-top: 15px;
+    margin-top: 0;
+}
+
+.copyright a{
+    display: inline-block;
+    background: url("#{$img_path}/govuk-crest-2x.png") no-repeat;
+    background-size: 125px 102px;
+    background-position: 100% 0%;
+    text-decoration: none;
+    padding-top: 115px;
+}
+
+.ogl-logo::before{
+    display: inline-block;
+    content: '';
+    background: url("#{$img_path}/open-government-licence_2x.png") no-repeat;
+    background-size: 41px 17px;
+    width: 41px;
+    height: 17px;
+    margin-right: 10px;
+}
+
+
+.breadcrumb{
+    margin-left:10px;
+    padding-left:15px;
+    background: url("#{$img_path}/separator-2x.png") 0 50% no-repeat;
+    background-size: 6px 11px;
+}
+
+.breadcrumb:first-child{
+    margin-left: 0;
+    padding-left: 0;
+    background:none;
+}
+

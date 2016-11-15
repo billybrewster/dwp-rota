@@ -1,0 +1,22 @@
+.float-left { display: inline; float: left; }
+.float-right { display: inline; float: right;  }
+.float-none { float: none; }
+
+
+@include breakpoint(mobile) {
+    .float-left-mob { display: inline; float: left; }
+    .float-right-mob { display: inline; float: right;  }
+    .float-none-mob { float: none; }
+}
+
+@include breakpoint(tablet) {
+    .float-left-tab { display: inline; float: left; }
+    .float-right-tab { display: inline; float: right;  }
+    .float-none-tab { float: none; }
+}
+
+@include breakpoint(desktop) {
+    .float-left-desktop { display: inline; float: left; }
+    .float-right-desktop { display: inline; float: right;  }
+    .float-none-desktop { float: none; }
+}
